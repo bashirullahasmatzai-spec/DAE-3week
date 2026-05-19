@@ -1,27 +1,1157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SportLive – Live Scores & Tickets</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
-  
 
-<h1>
-    Welcome to new class
-</h1>
+  <!-- =============================================
+       HOW PAGES WORK (no JavaScript!)
+       We use anchor links like  href="#live"
+       and CSS :target to show/hide pages.
+       The page with id="live" becomes visible
+       when the URL hash is #live.
+       ============================================= -->
 
-<section>class="dinosour
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-icon">⚡</span> SportLive
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#live">Live Scores</a></li>
+        <li><a href="#live">Tickets</a></li>
+        <li><a href="#home">News</a></li>
+        <li><a href="#home">About</a></li>
+      </ul>
+      <div class="nav-icons">
+        <span>🔍</span>
+        <span>👤</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE: HOME  id="home" ========== -->
+  <div id="home" class="page">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Live Scores.<br/><span class="red">Unmissable Moments.</span></h1>
+        <p>Get real-time updates from your favorite sports and book tickets to live events.</p>
+        <div class="hero-buttons">
+          <a href="#live" class="btn-primary">Explore Live Games</a>
+          <a href="#live" class="btn-outline">View Tickets</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-emoji">🏏 🏀 ⚽</div>
+      </div>
+    </section>
+
+    <!-- Popular Sports -->
+    <section class="section">
+      <h2 class="section-title">Popular Sports</h2>
+      <div class="sport-chips">
+        <a href="#live-cricket" class="sport-chip">🏏 <span>Cricket</span><small>12 Live</small></a>
+        <a href="#live-nba"     class="sport-chip">🏀 <span>NBA</span><small>8 Live</small></a>
+        <a href="#live-soccer"  class="sport-chip">⚽ <span>Soccer</span><small>15 Live</small></a>
+        <a href="#live-nfl"     class="sport-chip">🏈 <span>NFL</span><small>6 Live</small></a>
+        <a href="#live-mlb"     class="sport-chip">⚾ <span>MLB</span><small>5 Live</small></a>
+      </div>
+    </section>
+
+    <!-- Live Now (mini cards, hardcoded) -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Live Now</h2>
+        <a href="#live" class="view-all">View All</a>
+      </div>
+      <div class="mini-cards-row">
+
+        <!-- Mini card 1 -->
+        <a href="#detail-india-aus" class="mini-card">
+          <span class="live-badge">● LIVE</span>
+          <div class="mini-tournament">T20 World Cup</div>
+          <div class="mini-teams">
+            <div class="mini-team"><div class="m-flag">🇮🇳</div><div class="m-name">India</div><div class="m-score">178/4</div></div>
+            <div class="vs-div">VS</div>
+            <div class="mini-team"><div class="m-flag">🇦🇺</div><div class="m-name">Australia</div><div class="m-score">186</div></div>
+          </div>
+          <div class="mini-venue">Kensington Oval, Barbados</div>
+        </a>
+
+        <!-- Mini card 2 -->
+        <a href="#detail-lakers" class="mini-card">
+          <span class="live-badge">● LIVE</span>
+          <div class="mini-tournament">NBA Regular Season</div>
+          <div class="mini-teams">
+            <div class="mini-team"><div class="m-flag">🟡</div><div class="m-name">Lakers</div><div class="m-score">89</div></div>
+            <div class="vs-div">VS</div>
+            <div class="mini-team"><div class="m-flag">🟢</div><div class="m-name">Celtics</div><div class="m-score">95</div></div>
+          </div>
+          <div class="mini-venue">TD Garden, Boston</div>
+        </a>
+
+        <!-- Mini card 3 -->
+        <a href="#detail-mancity" class="mini-card">
+          <span class="live-badge">● LIVE</span>
+          <div class="mini-tournament">Premier League</div>
+          <div class="mini-teams">
+            <div class="mini-team"><div class="m-flag">🔵</div><div class="m-name">Man City</div><div class="m-score">2</div></div>
+            <div class="vs-div">VS</div>
+            <div class="mini-team"><div class="m-flag">🔴</div><div class="m-name">Arsenal</div><div class="m-score">1</div></div>
+          </div>
+          <div class="mini-venue">Etihad Stadium, Manchester</div>
+        </a>
+
+        <!-- Mini card 4 -->
+        <a href="#detail-chiefs" class="mini-card">
+          <span class="live-badge">● LIVE</span>
+          <div class="mini-tournament">NFL Regular Season</div>
+          <div class="mini-teams">
+            <div class="mini-team"><div class="m-flag">🔴</div><div class="m-name">Chiefs</div><div class="m-score">17</div></div>
+            <div class="vs-div">VS</div>
+            <div class="mini-team"><div class="m-flag">🔵</div><div class="m-name">Bills</div><div class="m-score">14</div></div>
+          </div>
+          <div class="mini-venue">Arrowhead Stadium, KC</div>
+        </a>
+
+      </div>
+    </section>
+
+  </div><!-- end #home -->
 
 
-<h2>How was The new class today</h2>
-<h3>It was very goob class today. But my feeling is not good. The teacher is very good.</h3>
+  <!-- ========== PAGE: LIVE GAMES  id="live" ========== -->
+  <!-- Also handles filtered views via sub-anchors -->
+  <div id="live" class="page">
+    <section class="section">
+      <h2 class="page-heading">Live Games</h2>
+      <p class="breadcrumb"><a href="#home">Home</a> &rsaquo; Live Games</p>
 
-</section>
+      <!-- Filter Tabs — each is just an anchor link to a sub-section -->
+      <div class="filter-tabs">
+        <a href="#live"         class="tab active-tab">All Sports <span class="count">46</span></a>
+        <a href="#live-cricket" class="tab">🏏 Cricket <span class="count">12</span></a>
+        <a href="#live-nba"    class="tab">🏀 NBA <span class="count">8</span></a>
+        <a href="#live-soccer" class="tab">⚽ Soccer <span class="count">15</span></a>
+        <a href="#live-nfl"    class="tab">🏈 NFL <span class="count">6</span></a>
+        <a href="#live-mlb"    class="tab">⚾ MLB <span class="count">5</span></a>
+      </div>
 
-  
+      <!-- ALL GAMES shown by default -->
+      <div class="game-list" id="all-games">
+
+        <!-- ---- CRICKET ---- -->
+        <div class="sport-group-label">🏏 Cricket – T20 World Cup</div>
+
+        <a href="#detail-india-aus" class="game-row">
+          <div class="row-left">
+            <span class="live-badge">● LIVE</span>
+            <span class="sport-tag">Cricket</span>
+          </div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">🇮🇳</span><span class="rname">India</span></div>
+            <div class="row-score">178/4 <small>18.2 overs</small></div>
+            <div class="row-team"><span class="rflag">🇦🇺</span><span class="rname">Australia</span></div>
+          </div>
+          <div class="row-venue"><strong>Kensington Oval, Barbados</strong>Today, 7:30 PM</div>
+          <div class="row-ticket">
+            <span class="btn-green">Buy Tickets</span>
+            <span class="tickets-left">2,450 tickets left</span>
+          </div>
+        </a>
+
+        <a href="#detail-eng-sa" class="game-row">
+          <div class="row-left">
+            <span class="live-badge">● LIVE</span>
+            <span class="sport-tag">Cricket</span>
+          </div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="rname">England</span></div>
+            <div class="row-score">156/7 <small>SA Targets 160</small></div>
+            <div class="row-team"><span class="rflag">🇿🇦</span><span class="rname">South Africa</span></div>
+          </div>
+          <div class="row-venue"><strong>Brian Lara Stadium, Trinidad</strong>Today, 5:00 PM</div>
+          <div class="row-ticket">
+            <span class="btn-green">Buy Tickets</span>
+            <span class="tickets-left">1,890 tickets left</span>
+          </div>
+        </a>
+
+        <a href="#detail-pak-nz" class="game-row">
+          <div class="row-left">
+            <span class="live-badge">● LIVE</span>
+            <span class="sport-tag">Cricket</span>
+          </div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">🇵🇰</span><span class="rname">Pakistan</span></div>
+            <div class="row-score">92/3 <small>New 7th overs</small></div>
+            <div class="row-team"><span class="rflag">🇳🇿</span><span class="rname">New Zealand</span></div>
+          </div>
+          <div class="row-venue"><strong>Providence Stadium, Guyana</strong>Today, 3:30 PM</div>
+          <div class="row-ticket">
+            <span class="btn-green">Buy Tickets</span>
+            <span class="tickets-left">1,200 tickets left</span>
+          </div>
+        </a>
+
+        <a href="#detail-ban-sl" class="game-row">
+          <div class="row-left">
+            <span class="upcoming-badge">UPCOMING</span>
+            <span class="sport-tag">Cricket</span>
+          </div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">🇧🇩</span><span class="rname">Bangladesh</span></div>
+            <div class="row-score">— </div>
+            <div class="row-team"><span class="rflag">🇱🇰</span><span class="rname">Sri Lanka</span></div>
+          </div>
+          <div class="row-venue"><strong>Arnos Vale Stadium, St. Vincent</strong>Today, 8:30 PM</div>
+          <div class="row-ticket">
+            <span class="btn-green">Buy Tickets</span>
+            <span class="tickets-left">3,500 tickets left</span>
+          </div>
+        </a>
+
+        <!-- ---- NBA ---- -->
+        <div class="sport-group-label">🏀 NBA – Regular Season</div>
+
+        <a href="#detail-lakers" class="game-row">
+          <div class="row-left">
+            <span class="live-badge">● LIVE</span>
+            <span class="sport-tag">NBA</span>
+          </div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">🟡</span><span class="rname">Lakers</span></div>
+            <div class="row-score">89 <small>Q4 06:22</small></div>
+            <div class="row-team"><span class="rflag">🟢</span><span class="rname">Celtics</span></div>
+          </div>
+          <div class="row-venue"><strong>TD Garden, Boston</strong>Today, 7:00 PM</div>
+          <div class="row-ticket">
+            <span class="btn-green">Buy Tickets</span>
+            <span class="tickets-left">980 tickets left</span>
+          </div>
+        </a>
+
+        <a href="#detail-warriors" class="game-row">
+          <div class="row-left">
+            <span class="live-badge">● LIVE</span>
+            <span class="sport-tag">NBA</span>
+          </div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">🔵</span><span class="rname">Warriors</span></div>
+            <div class="row-score">104 <small>Q3 02:15</small></div>
+            <div class="row-team"><span class="rflag">🔴</span><span class="rname">Heat</span></div>
+          </div>
+          <div class="row-venue"><strong>Chase Center, San Francisco</strong>Today, 9:30 PM</div>
+          <div class="row-ticket">
+            <span class="btn-green">Buy Tickets</span>
+            <span class="tickets-left">600 tickets left</span>
+          </div>
+        </a>
+
+        <!-- ---- SOCCER ---- -->
+        <div class="sport-group-label">⚽ Soccer – Premier League</div>
+
+        <a href="#detail-mancity" class="game-row">
+          <div class="row-left">
+            <span class="live-badge">● LIVE</span>
+            <span class="sport-tag">Soccer</span>
+          </div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">🔵</span><span class="rname">Man City</span></div>
+            <div class="row-score">2 – 1</div>
+            <div class="row-team"><span class="rflag">🔴</span><span class="rname">Arsenal</span></div>
+          </div>
+          <div class="row-venue"><strong>Etihad Stadium, Manchester</strong>Today, 3:00 PM</div>
+          <div class="row-ticket">
+            <span class="btn-green">Buy Tickets</span>
+            <span class="tickets-left">1,500 tickets left</span>
+          </div>
+        </a>
+
+        <a href="#detail-liverpool" class="game-row">
+          <div class="row-left">
+            <span class="live-badge">● LIVE</span>
+            <span class="sport-tag">Soccer</span>
+          </div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">🔴</span><span class="rname">Liverpool</span></div>
+            <div class="row-score">3 – 1</div>
+            <div class="row-team"><span class="rflag">🔵</span><span class="rname">Chelsea</span></div>
+          </div>
+          <div class="row-venue"><strong>Anfield, Liverpool</strong>Today, 1:30 PM</div>
+          <div class="row-ticket">
+            <span class="btn-green">Buy Tickets</span>
+            <span class="tickets-left">400 tickets left</span>
+          </div>
+        </a>
+
+        <!-- ---- NFL ---- -->
+        <div class="sport-group-label">🏈 NFL – Regular Season</div>
+
+        <a href="#detail-chiefs" class="game-row">
+          <div class="row-left">
+            <span class="live-badge">● LIVE</span>
+            <span class="sport-tag">NFL</span>
+          </div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">🔴</span><span class="rname">Chiefs</span></div>
+            <div class="row-score">17 – 14 <small>Q3 08:35</small></div>
+            <div class="row-team"><span class="rflag">🔵</span><span class="rname">Bills</span></div>
+          </div>
+          <div class="row-venue"><strong>Arrowhead Stadium, KC</strong>Today, 4:25 PM</div>
+          <div class="row-ticket">
+            <span class="btn-green">Buy Tickets</span>
+            <span class="tickets-left">2,100 tickets left</span>
+          </div>
+        </a>
+
+        <!-- ---- MLB ---- -->
+        <div class="sport-group-label">⚾ MLB – Regular Season</div>
+
+        <a href="#detail-yankees" class="game-row">
+          <div class="row-left">
+            <span class="live-badge">● LIVE</span>
+            <span class="sport-tag">MLB</span>
+          </div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">⚾</span><span class="rname">Yankees</span></div>
+            <div class="row-score">5 – 3 <small>7th Inning</small></div>
+            <div class="row-team"><span class="rflag">⚾</span><span class="rname">Red Sox</span></div>
+          </div>
+          <div class="row-venue"><strong>Yankee Stadium, New York</strong>Today, 6:05 PM</div>
+          <div class="row-ticket">
+            <span class="btn-green">Buy Tickets</span>
+            <span class="tickets-left">3,200 tickets left</span>
+          </div>
+        </a>
+
+      </div><!-- end .game-list -->
+    </section>
+  </div><!-- end #live -->
+
+
+  <!-- ========== FILTERED CATEGORY PAGES ========== -->
+  <!-- Each is its own anchor target, shows only that sport -->
+
+  <!-- CRICKET -->
+  <div id="live-cricket" class="page">
+    <section class="section">
+      <h2 class="page-heading">🏏 Cricket – Live Games</h2>
+      <p class="breadcrumb"><a href="#home">Home</a> &rsaquo; <a href="#live">Live Games</a> &rsaquo; Cricket</p>
+      <div class="filter-tabs">
+        <a href="#live"         class="tab">All Sports</a>
+        <a href="#live-cricket" class="tab active-tab">🏏 Cricket</a>
+        <a href="#live-nba"    class="tab">🏀 NBA</a>
+        <a href="#live-soccer" class="tab">⚽ Soccer</a>
+        <a href="#live-nfl"    class="tab">🏈 NFL</a>
+        <a href="#live-mlb"    class="tab">⚾ MLB</a>
+      </div>
+      <div class="game-list">
+        <a href="#detail-india-aus" class="game-row">
+          <div class="row-left"><span class="live-badge">● LIVE</span><span class="sport-tag">T20 WC</span></div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">🇮🇳</span><span class="rname">India</span></div>
+            <div class="row-score">178/4 <small>18.2 overs</small></div>
+            <div class="row-team"><span class="rflag">🇦🇺</span><span class="rname">Australia</span></div>
+          </div>
+          <div class="row-venue"><strong>Kensington Oval, Barbados</strong>Today, 7:30 PM</div>
+          <div class="row-ticket"><span class="btn-green">Buy Tickets</span><span class="tickets-left">2,450 left</span></div>
+        </a>
+        <a href="#detail-eng-sa" class="game-row">
+          <div class="row-left"><span class="live-badge">● LIVE</span><span class="sport-tag">T20 WC</span></div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="rname">England</span></div>
+            <div class="row-score">156/7 <small>SA Targets 160</small></div>
+            <div class="row-team"><span class="rflag">🇿🇦</span><span class="rname">South Africa</span></div>
+          </div>
+          <div class="row-venue"><strong>Brian Lara Stadium, Trinidad</strong>Today, 5:00 PM</div>
+          <div class="row-ticket"><span class="btn-green">Buy Tickets</span><span class="tickets-left">1,890 left</span></div>
+        </a>
+        <a href="#detail-pak-nz" class="game-row">
+          <div class="row-left"><span class="live-badge">● LIVE</span><span class="sport-tag">T20 WC</span></div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">🇵🇰</span><span class="rname">Pakistan</span></div>
+            <div class="row-score">92/3 <small>7th over</small></div>
+            <div class="row-team"><span class="rflag">🇳🇿</span><span class="rname">New Zealand</span></div>
+          </div>
+          <div class="row-venue"><strong>Providence Stadium, Guyana</strong>Today, 3:30 PM</div>
+          <div class="row-ticket"><span class="btn-green">Buy Tickets</span><span class="tickets-left">1,200 left</span></div>
+        </a>
+        <a href="#detail-ban-sl" class="game-row">
+          <div class="row-left"><span class="upcoming-badge">UPCOMING</span><span class="sport-tag">T20 WC</span></div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">🇧🇩</span><span class="rname">Bangladesh</span></div>
+            <div class="row-score">—</div>
+            <div class="row-team"><span class="rflag">🇱🇰</span><span class="rname">Sri Lanka</span></div>
+          </div>
+          <div class="row-venue"><strong>Arnos Vale Stadium, St. Vincent</strong>Today, 8:30 PM</div>
+          <div class="row-ticket"><span class="btn-green">Buy Tickets</span><span class="tickets-left">3,500 left</span></div>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- NBA -->
+  <div id="live-nba" class="page">
+    <section class="section">
+      <h2 class="page-heading">🏀 NBA – Live Games</h2>
+      <p class="breadcrumb"><a href="#home">Home</a> &rsaquo; <a href="#live">Live Games</a> &rsaquo; NBA</p>
+      <div class="filter-tabs">
+        <a href="#live"         class="tab">All Sports</a>
+        <a href="#live-cricket" class="tab">🏏 Cricket</a>
+        <a href="#live-nba"    class="tab active-tab">🏀 NBA</a>
+        <a href="#live-soccer" class="tab">⚽ Soccer</a>
+        <a href="#live-nfl"    class="tab">🏈 NFL</a>
+        <a href="#live-mlb"    class="tab">⚾ MLB</a>
+      </div>
+      <div class="game-list">
+        <a href="#detail-lakers" class="game-row">
+          <div class="row-left"><span class="live-badge">● LIVE</span><span class="sport-tag">NBA</span></div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">🟡</span><span class="rname">Lakers</span></div>
+            <div class="row-score">89 – 95 <small>Q4 06:22</small></div>
+            <div class="row-team"><span class="rflag">🟢</span><span class="rname">Celtics</span></div>
+          </div>
+          <div class="row-venue"><strong>TD Garden, Boston</strong>Today, 7:00 PM</div>
+          <div class="row-ticket"><span class="btn-green">Buy Tickets</span><span class="tickets-left">980 left</span></div>
+        </a>
+        <a href="#detail-warriors" class="game-row">
+          <div class="row-left"><span class="live-badge">● LIVE</span><span class="sport-tag">NBA</span></div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">🔵</span><span class="rname">Warriors</span></div>
+            <div class="row-score">104 – 98 <small>Q3 02:15</small></div>
+            <div class="row-team"><span class="rflag">🔴</span><span class="rname">Heat</span></div>
+          </div>
+          <div class="row-venue"><strong>Chase Center, San Francisco</strong>Today, 9:30 PM</div>
+          <div class="row-ticket"><span class="btn-green">Buy Tickets</span><span class="tickets-left">600 left</span></div>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- SOCCER -->
+  <div id="live-soccer" class="page">
+    <section class="section">
+      <h2 class="page-heading">⚽ Soccer – Live Games</h2>
+      <p class="breadcrumb"><a href="#home">Home</a> &rsaquo; <a href="#live">Live Games</a> &rsaquo; Soccer</p>
+      <div class="filter-tabs">
+        <a href="#live"         class="tab">All Sports</a>
+        <a href="#live-cricket" class="tab">🏏 Cricket</a>
+        <a href="#live-nba"    class="tab">🏀 NBA</a>
+        <a href="#live-soccer" class="tab active-tab">⚽ Soccer</a>
+        <a href="#live-nfl"    class="tab">🏈 NFL</a>
+        <a href="#live-mlb"    class="tab">⚾ MLB</a>
+      </div>
+      <div class="game-list">
+        <a href="#detail-mancity" class="game-row">
+          <div class="row-left"><span class="live-badge">● LIVE</span><span class="sport-tag">EPL</span></div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">🔵</span><span class="rname">Man City</span></div>
+            <div class="row-score">2 – 1</div>
+            <div class="row-team"><span class="rflag">🔴</span><span class="rname">Arsenal</span></div>
+          </div>
+          <div class="row-venue"><strong>Etihad Stadium, Manchester</strong>Today, 3:00 PM</div>
+          <div class="row-ticket"><span class="btn-green">Buy Tickets</span><span class="tickets-left">1,500 left</span></div>
+        </a>
+        <a href="#detail-liverpool" class="game-row">
+          <div class="row-left"><span class="live-badge">● LIVE</span><span class="sport-tag">EPL</span></div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">🔴</span><span class="rname">Liverpool</span></div>
+            <div class="row-score">3 – 1</div>
+            <div class="row-team"><span class="rflag">🔵</span><span class="rname">Chelsea</span></div>
+          </div>
+          <div class="row-venue"><strong>Anfield, Liverpool</strong>Today, 1:30 PM</div>
+          <div class="row-ticket"><span class="btn-green">Buy Tickets</span><span class="tickets-left">400 left</span></div>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- NFL -->
+  <div id="live-nfl" class="page">
+    <section class="section">
+      <h2 class="page-heading">🏈 NFL – Live Games</h2>
+      <p class="breadcrumb"><a href="#home">Home</a> &rsaquo; <a href="#live">Live Games</a> &rsaquo; NFL</p>
+      <div class="filter-tabs">
+        <a href="#live"         class="tab">All Sports</a>
+        <a href="#live-cricket" class="tab">🏏 Cricket</a>
+        <a href="#live-nba"    class="tab">🏀 NBA</a>
+        <a href="#live-soccer" class="tab">⚽ Soccer</a>
+        <a href="#live-nfl"    class="tab active-tab">🏈 NFL</a>
+        <a href="#live-mlb"    class="tab">⚾ MLB</a>
+      </div>
+      <div class="game-list">
+        <a href="#detail-chiefs" class="game-row">
+          <div class="row-left"><span class="live-badge">● LIVE</span><span class="sport-tag">NFL</span></div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">🔴</span><span class="rname">Chiefs</span></div>
+            <div class="row-score">17 – 14 <small>Q3 08:35</small></div>
+            <div class="row-team"><span class="rflag">🔵</span><span class="rname">Bills</span></div>
+          </div>
+          <div class="row-venue"><strong>Arrowhead Stadium, KC</strong>Today, 4:25 PM</div>
+          <div class="row-ticket"><span class="btn-green">Buy Tickets</span><span class="tickets-left">2,100 left</span></div>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- MLB -->
+  <div id="live-mlb" class="page">
+    <section class="section">
+      <h2 class="page-heading">⚾ MLB – Live Games</h2>
+      <p class="breadcrumb"><a href="#home">Home</a> &rsaquo; <a href="#live">Live Games</a> &rsaquo; MLB</p>
+      <div class="filter-tabs">
+        <a href="#live"         class="tab">All Sports</a>
+        <a href="#live-cricket" class="tab">🏏 Cricket</a>
+        <a href="#live-nba"    class="tab">🏀 NBA</a>
+        <a href="#live-soccer" class="tab">⚽ Soccer</a>
+        <a href="#live-nfl"    class="tab">🏈 NFL</a>
+        <a href="#live-mlb"    class="tab active-tab">⚾ MLB</a>
+      </div>
+      <div class="game-list">
+        <a href="#detail-yankees" class="game-row">
+          <div class="row-left"><span class="live-badge">● LIVE</span><span class="sport-tag">MLB</span></div>
+          <div class="row-teams">
+            <div class="row-team"><span class="rflag">⚾</span><span class="rname">Yankees</span></div>
+            <div class="row-score">5 – 3 <small>7th Inning</small></div>
+            <div class="row-team"><span class="rflag">⚾</span><span class="rname">Red Sox</span></div>
+          </div>
+          <div class="row-venue"><strong>Yankee Stadium, New York</strong>Today, 6:05 PM</div>
+          <div class="row-ticket"><span class="btn-green">Buy Tickets</span><span class="tickets-left">3,200 left</span></div>
+        </a>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- ========== GAME DETAIL PAGES ========== -->
+  <!-- One per game. Each links to its own ticket page. -->
+
+  <!-- INDIA vs AUSTRALIA -->
+  <div id="detail-india-aus" class="page">
+    <section class="section">
+      <a href="#live" class="back-link">← Back to Live Games</a>
+      <div class="detail-header">
+        <span class="detail-live-badge">● LIVE &nbsp; T20 World Cup</span>
+        <div class="detail-sub">Super 8 – Match 12</div>
+        <div class="detail-teams">
+          <div class="detail-team">
+            <div class="d-flag">🇮🇳</div>
+            <div class="d-name">INDIA</div>
+            <div class="d-score">178/4</div>
+            <div class="d-overs">(18.2 overs)</div>
+          </div>
+          <div class="vs-big">VS<br/><span class="target-label">Targets 186</span></div>
+          <div class="detail-team">
+            <div class="d-flag">🇦🇺</div>
+            <div class="d-name">AUSTRALIA</div>
+          </div>
+        </div>
+        <div class="detail-venue">Kensington Oval, Barbados &nbsp;|&nbsp; Today, 7:30 PM</div>
+      </div>
+      <div class="detail-body">
+        <div class="overview-table">
+          <h3>Match Overview</h3>
+          <div class="ov-row"><span class="ov-k">Tournament</span><span class="ov-v">T20 World Cup 2024</span></div>
+          <div class="ov-row"><span class="ov-k">Match</span><span class="ov-v">Super 8 – Match 12</span></div>
+          <div class="ov-row"><span class="ov-k">Venue</span><span class="ov-v">Kensington Oval, Barbados</span></div>
+          <div class="ov-row"><span class="ov-k">Date & Time</span><span class="ov-v">June 15, 2024, 7:30 PM</span></div>
+          <div class="ov-row"><span class="ov-k">Status</span><span class="ov-v">🔴 Live – India batting</span></div>
+          <div class="ov-row"><span class="ov-k">Weather</span><span class="ov-v">28°C, Clear</span></div>
+        </div>
+        <div class="ticket-panel">
+          <h3>Buy Tickets</h3>
+          <div class="tp-avail">2,450 tickets left</div>
+          <div class="tp-price">From $25</div>
+          <a href="#tickets-india-aus" class="btn-primary tp-btn">Select Tickets</a>
+          <div class="price-row"><span class="p-k">General</span><span class="p-v">$25</span></div>
+          <div class="price-row"><span class="p-k">Premium</span><span class="p-v">$75</span></div>
+          <div class="price-row"><span class="p-k">VIP</span><span class="p-v">$150</span></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ENGLAND vs SOUTH AFRICA -->
+  <div id="detail-eng-sa" class="page">
+    <section class="section">
+      <a href="#live-cricket" class="back-link">← Back to Live Games</a>
+      <div class="detail-header">
+        <span class="detail-live-badge">● LIVE &nbsp; T20 World Cup</span>
+        <div class="detail-sub">Super 8 – Match 11</div>
+        <div class="detail-teams">
+          <div class="detail-team">
+            <div class="d-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div><div class="d-name">ENGLAND</div><div class="d-score">156/7</div>
+          </div>
+          <div class="vs-big">VS<br/><span class="target-label">SA Targets 160</span></div>
+          <div class="detail-team">
+            <div class="d-flag">🇿🇦</div><div class="d-name">SOUTH AFRICA</div>
+          </div>
+        </div>
+        <div class="detail-venue">Brian Lara Stadium, Trinidad &nbsp;|&nbsp; Today, 5:00 PM</div>
+      </div>
+      <div class="detail-body">
+        <div class="overview-table">
+          <h3>Match Overview</h3>
+          <div class="ov-row"><span class="ov-k">Tournament</span><span class="ov-v">T20 World Cup 2024</span></div>
+          <div class="ov-row"><span class="ov-k">Match</span><span class="ov-v">Super 8 – Match 11</span></div>
+          <div class="ov-row"><span class="ov-k">Venue</span><span class="ov-v">Brian Lara Stadium, Trinidad</span></div>
+          <div class="ov-row"><span class="ov-k">Date & Time</span><span class="ov-v">Today, 5:00 PM</span></div>
+          <div class="ov-row"><span class="ov-k">Status</span><span class="ov-v">🔴 Live – England batting</span></div>
+          <div class="ov-row"><span class="ov-k">Weather</span><span class="ov-v">30°C, Humid</span></div>
+        </div>
+        <div class="ticket-panel">
+          <h3>Buy Tickets</h3>
+          <div class="tp-avail">1,890 tickets left</div>
+          <div class="tp-price">From $20</div>
+          <a href="#tickets-eng-sa" class="btn-primary tp-btn">Select Tickets</a>
+          <div class="price-row"><span class="p-k">General</span><span class="p-v">$20</span></div>
+          <div class="price-row"><span class="p-k">Premium</span><span class="p-v">$60</span></div>
+          <div class="price-row"><span class="p-k">VIP</span><span class="p-v">$120</span></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- PAKISTAN vs NEW ZEALAND -->
+  <div id="detail-pak-nz" class="page">
+    <section class="section">
+      <a href="#live-cricket" class="back-link">← Back to Live Games</a>
+      <div class="detail-header">
+        <span class="detail-live-badge">● LIVE &nbsp; T20 World Cup</span>
+        <div class="detail-sub">Super 8 – Match 10</div>
+        <div class="detail-teams">
+          <div class="detail-team"><div class="d-flag">🇵🇰</div><div class="d-name">PAKISTAN</div><div class="d-score">92/3</div></div>
+          <div class="vs-big">VS</div>
+          <div class="detail-team"><div class="d-flag">🇳🇿</div><div class="d-name">NEW ZEALAND</div></div>
+        </div>
+        <div class="detail-venue">Providence Stadium, Guyana &nbsp;|&nbsp; Today, 3:30 PM</div>
+      </div>
+      <div class="detail-body">
+        <div class="overview-table">
+          <h3>Match Overview</h3>
+          <div class="ov-row"><span class="ov-k">Tournament</span><span class="ov-v">T20 World Cup 2024</span></div>
+          <div class="ov-row"><span class="ov-k">Venue</span><span class="ov-v">Providence Stadium, Guyana</span></div>
+          <div class="ov-row"><span class="ov-k">Status</span><span class="ov-v">🔴 Live – Pakistan batting</span></div>
+          <div class="ov-row"><span class="ov-k">Weather</span><span class="ov-v">27°C, Cloudy</span></div>
+        </div>
+        <div class="ticket-panel">
+          <h3>Buy Tickets</h3>
+          <div class="tp-avail">1,200 tickets left</div>
+          <div class="tp-price">From $20</div>
+          <a href="#tickets-pak-nz" class="btn-primary tp-btn">Select Tickets</a>
+          <div class="price-row"><span class="p-k">General</span><span class="p-v">$20</span></div>
+          <div class="price-row"><span class="p-k">Premium</span><span class="p-v">$55</span></div>
+          <div class="price-row"><span class="p-k">VIP</span><span class="p-v">$100</span></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- BANGLADESH vs SRI LANKA -->
+  <div id="detail-ban-sl" class="page">
+    <section class="section">
+      <a href="#live-cricket" class="back-link">← Back to Live Games</a>
+      <div class="detail-header">
+        <span class="upcoming-badge" style="font-size:13px;padding:4px 12px;">UPCOMING</span>
+        <div class="detail-sub">T20 World Cup – Super 8, Match 13</div>
+        <div class="detail-teams">
+          <div class="detail-team"><div class="d-flag">🇧🇩</div><div class="d-name">BANGLADESH</div><div class="d-score">—</div></div>
+          <div class="vs-big">VS</div>
+          <div class="detail-team"><div class="d-flag">🇱🇰</div><div class="d-name">SRI LANKA</div><div class="d-score">—</div></div>
+        </div>
+        <div class="detail-venue">Arnos Vale Stadium, St. Vincent &nbsp;|&nbsp; Today, 8:30 PM</div>
+      </div>
+      <div class="detail-body">
+        <div class="overview-table">
+          <h3>Match Overview</h3>
+          <div class="ov-row"><span class="ov-k">Status</span><span class="ov-v">🕐 Upcoming</span></div>
+          <div class="ov-row"><span class="ov-k">Weather</span><span class="ov-v">26°C, Clear</span></div>
+        </div>
+        <div class="ticket-panel">
+          <h3>Buy Tickets</h3>
+          <div class="tp-avail">3,500 tickets left</div>
+          <div class="tp-price">From $15</div>
+          <a href="#tickets-ban-sl" class="btn-primary tp-btn">Select Tickets</a>
+          <div class="price-row"><span class="p-k">General</span><span class="p-v">$15</span></div>
+          <div class="price-row"><span class="p-k">Premium</span><span class="p-v">$45</span></div>
+          <div class="price-row"><span class="p-k">VIP</span><span class="p-v">$90</span></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- LAKERS vs CELTICS -->
+  <div id="detail-lakers" class="page">
+    <section class="section">
+      <a href="#live-nba" class="back-link">← Back to Live Games</a>
+      <div class="detail-header">
+        <span class="detail-live-badge">● LIVE &nbsp; NBA Regular Season</span>
+        <div class="detail-sub">Game 4 of 7</div>
+        <div class="detail-teams">
+          <div class="detail-team"><div class="d-flag">🟡</div><div class="d-name">LAKERS</div><div class="d-score">89</div><div class="d-overs">Q4 06:22</div></div>
+          <div class="vs-big">VS</div>
+          <div class="detail-team"><div class="d-flag">🟢</div><div class="d-name">CELTICS</div><div class="d-score">95</div></div>
+        </div>
+        <div class="detail-venue">TD Garden, Boston &nbsp;|&nbsp; Today, 7:00 PM</div>
+      </div>
+      <div class="detail-body">
+        <div class="overview-table">
+          <h3>Match Overview</h3>
+          <div class="ov-row"><span class="ov-k">League</span><span class="ov-v">NBA Regular Season</span></div>
+          <div class="ov-row"><span class="ov-k">Venue</span><span class="ov-v">TD Garden, Boston</span></div>
+          <div class="ov-row"><span class="ov-k">Status</span><span class="ov-v">🔴 Q4 – 06:22 remaining</span></div>
+        </div>
+        <div class="ticket-panel">
+          <h3>Buy Tickets</h3>
+          <div class="tp-avail">980 tickets left</div>
+          <div class="tp-price">From $50</div>
+          <a href="#tickets-lakers" class="btn-primary tp-btn">Select Tickets</a>
+          <div class="price-row"><span class="p-k">General</span><span class="p-v">$50</span></div>
+          <div class="price-row"><span class="p-k">Premium</span><span class="p-v">$150</span></div>
+          <div class="price-row"><span class="p-k">VIP</span><span class="p-v">$350</span></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- WARRIORS vs HEAT -->
+  <div id="detail-warriors" class="page">
+    <section class="section">
+      <a href="#live-nba" class="back-link">← Back to Live Games</a>
+      <div class="detail-header">
+        <span class="detail-live-badge">● LIVE &nbsp; NBA Regular Season</span>
+        <div class="detail-sub">Game 3 of 7</div>
+        <div class="detail-teams">
+          <div class="detail-team"><div class="d-flag">🔵</div><div class="d-name">WARRIORS</div><div class="d-score">104</div><div class="d-overs">Q3 02:15</div></div>
+          <div class="vs-big">VS</div>
+          <div class="detail-team"><div class="d-flag">🔴</div><div class="d-name">HEAT</div><div class="d-score">98</div></div>
+        </div>
+        <div class="detail-venue">Chase Center, San Francisco &nbsp;|&nbsp; Today, 9:30 PM</div>
+      </div>
+      <div class="detail-body">
+        <div class="overview-table">
+          <h3>Match Overview</h3>
+          <div class="ov-row"><span class="ov-k">Venue</span><span class="ov-v">Chase Center, San Francisco</span></div>
+          <div class="ov-row"><span class="ov-k">Status</span><span class="ov-v">🔴 Q3 – 02:15 remaining</span></div>
+        </div>
+        <div class="ticket-panel">
+          <h3>Buy Tickets</h3>
+          <div class="tp-avail">600 tickets left</div>
+          <div class="tp-price">From $75</div>
+          <a href="#tickets-warriors" class="btn-primary tp-btn">Select Tickets</a>
+          <div class="price-row"><span class="p-k">General</span><span class="p-v">$75</span></div>
+          <div class="price-row"><span class="p-k">Premium</span><span class="p-v">$200</span></div>
+          <div class="price-row"><span class="p-k">VIP</span><span class="p-v">$500</span></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- MAN CITY vs ARSENAL -->
+  <div id="detail-mancity" class="page">
+    <section class="section">
+      <a href="#live-soccer" class="back-link">← Back to Live Games</a>
+      <div class="detail-header">
+        <span class="detail-live-badge">● LIVE &nbsp; Premier League</span>
+        <div class="detail-sub">Match Week 36</div>
+        <div class="detail-teams">
+          <div class="detail-team"><div class="d-flag">🔵</div><div class="d-name">MAN CITY</div><div class="d-score">2</div></div>
+          <div class="vs-big">VS</div>
+          <div class="detail-team"><div class="d-flag">🔴</div><div class="d-name">ARSENAL</div><div class="d-score">1</div></div>
+        </div>
+        <div class="detail-venue">Etihad Stadium, Manchester &nbsp;|&nbsp; Today, 3:00 PM</div>
+      </div>
+      <div class="detail-body">
+        <div class="overview-table">
+          <h3>Match Overview</h3>
+          <div class="ov-row"><span class="ov-k">League</span><span class="ov-v">Premier League</span></div>
+          <div class="ov-row"><span class="ov-k">Weather</span><span class="ov-v">16°C, Overcast</span></div>
+          <div class="ov-row"><span class="ov-k">Status</span><span class="ov-v">🔴 Live – 72nd minute</span></div>
+        </div>
+        <div class="ticket-panel">
+          <h3>Buy Tickets</h3>
+          <div class="tp-avail">1,500 tickets left</div>
+          <div class="tp-price">From $30</div>
+          <a href="#tickets-mancity" class="btn-primary tp-btn">Select Tickets</a>
+          <div class="price-row"><span class="p-k">General</span><span class="p-v">$30</span></div>
+          <div class="price-row"><span class="p-k">Premium</span><span class="p-v">$85</span></div>
+          <div class="price-row"><span class="p-k">VIP</span><span class="p-v">$200</span></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- LIVERPOOL vs CHELSEA -->
+  <div id="detail-liverpool" class="page">
+    <section class="section">
+      <a href="#live-soccer" class="back-link">← Back to Live Games</a>
+      <div class="detail-header">
+        <span class="detail-live-badge">● LIVE &nbsp; Premier League</span>
+        <div class="detail-sub">Match Week 36</div>
+        <div class="detail-teams">
+          <div class="detail-team"><div class="d-flag">🔴</div><div class="d-name">LIVERPOOL</div><div class="d-score">3</div></div>
+          <div class="vs-big">VS</div>
+          <div class="detail-team"><div class="d-flag">🔵</div><div class="d-name">CHELSEA</div><div class="d-score">1</div></div>
+        </div>
+        <div class="detail-venue">Anfield, Liverpool &nbsp;|&nbsp; Today, 1:30 PM</div>
+      </div>
+      <div class="detail-body">
+        <div class="overview-table">
+          <h3>Match Overview</h3>
+          <div class="ov-row"><span class="ov-k">Weather</span><span class="ov-v">14°C, Rain</span></div>
+          <div class="ov-row"><span class="ov-k">Status</span><span class="ov-v">🔴 Live – 81st minute</span></div>
+        </div>
+        <div class="ticket-panel">
+          <h3>Buy Tickets</h3>
+          <div class="tp-avail">400 tickets left</div>
+          <div class="tp-price">From $40</div>
+          <a href="#tickets-liverpool" class="btn-primary tp-btn">Select Tickets</a>
+          <div class="price-row"><span class="p-k">General</span><span class="p-v">$40</span></div>
+          <div class="price-row"><span class="p-k">Premium</span><span class="p-v">$100</span></div>
+          <div class="price-row"><span class="p-k">VIP</span><span class="p-v">$220</span></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- CHIEFS vs BILLS -->
+  <div id="detail-chiefs" class="page">
+    <section class="section">
+      <a href="#live-nfl" class="back-link">← Back to Live Games</a>
+      <div class="detail-header">
+        <span class="detail-live-badge">● LIVE &nbsp; NFL Regular Season</span>
+        <div class="detail-sub">Week 14</div>
+        <div class="detail-teams">
+          <div class="detail-team"><div class="d-flag">🔴</div><div class="d-name">CHIEFS</div><div class="d-score">17</div><div class="d-overs">Q3 08:35</div></div>
+          <div class="vs-big">VS</div>
+          <div class="detail-team"><div class="d-flag">🔵</div><div class="d-name">BILLS</div><div class="d-score">14</div></div>
+        </div>
+        <div class="detail-venue">Arrowhead Stadium, KC &nbsp;|&nbsp; Today, 4:25 PM</div>
+      </div>
+      <div class="detail-body">
+        <div class="overview-table">
+          <h3>Match Overview</h3>
+          <div class="ov-row"><span class="ov-k">Weather</span><span class="ov-v">22°C, Clear</span></div>
+          <div class="ov-row"><span class="ov-k">Status</span><span class="ov-v">🔴 Q3 – 08:35 remaining</span></div>
+        </div>
+        <div class="ticket-panel">
+          <h3>Buy Tickets</h3>
+          <div class="tp-avail">2,100 tickets left</div>
+          <div class="tp-price">From $80</div>
+          <a href="#tickets-chiefs" class="btn-primary tp-btn">Select Tickets</a>
+          <div class="price-row"><span class="p-k">General</span><span class="p-v">$80</span></div>
+          <div class="price-row"><span class="p-k">Premium</span><span class="p-v">$220</span></div>
+          <div class="price-row"><span class="p-k">VIP</span><span class="p-v">$500</span></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- YANKEES vs RED SOX -->
+  <div id="detail-yankees" class="page">
+    <section class="section">
+      <a href="#live-mlb" class="back-link">← Back to Live Games</a>
+      <div class="detail-header">
+        <span class="detail-live-badge">● LIVE &nbsp; MLB Regular Season</span>
+        <div class="detail-sub">Game 78</div>
+        <div class="detail-teams">
+          <div class="detail-team"><div class="d-flag">⚾</div><div class="d-name">YANKEES</div><div class="d-score">5</div><div class="d-overs">7th Inning</div></div>
+          <div class="vs-big">VS</div>
+          <div class="detail-team"><div class="d-flag">⚾</div><div class="d-name">RED SOX</div><div class="d-score">3</div></div>
+        </div>
+        <div class="detail-venue">Yankee Stadium, New York &nbsp;|&nbsp; Today, 6:05 PM</div>
+      </div>
+      <div class="detail-body">
+        <div class="overview-table">
+          <h3>Match Overview</h3>
+          <div class="ov-row"><span class="ov-k">Weather</span><span class="ov-v">24°C, Clear</span></div>
+          <div class="ov-row"><span class="ov-k">Status</span><span class="ov-v">🔴 Live – 7th Inning</span></div>
+        </div>
+        <div class="ticket-panel">
+          <h3>Buy Tickets</h3>
+          <div class="tp-avail">3,200 tickets left</div>
+          <div class="tp-price">From $35</div>
+          <a href="#tickets-yankees" class="btn-primary tp-btn">Select Tickets</a>
+          <div class="price-row"><span class="p-k">General</span><span class="p-v">$35</span></div>
+          <div class="price-row"><span class="p-k">Premium</span><span class="p-v">$90</span></div>
+          <div class="price-row"><span class="p-k">VIP</span><span class="p-v">$180</span></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- ========== TICKET SELECT PAGES ========== -->
+  <!-- One per game. Stadium diagram + section info + link to checkout -->
+
+  <!-- Reusable ticket template — we repeat this per game -->
+  <!-- INDIA vs AUS tickets -->
+  <div id="tickets-india-aus" class="page">
+    <section class="section">
+      <a href="#detail-india-aus" class="back-link">← Back to Game Details</a>
+      <h2 class="select-heading">Select Tickets</h2>
+      <p class="select-sub">India vs Australia – T20 World Cup &nbsp;|&nbsp; Kensington Oval &nbsp;|&nbsp; Today, 7:30 PM</p>
+      <div class="ticket-select-layout">
+        <!-- Stadium map -->
+        <div class="stadium-wrap">
+          <svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" class="stadium-svg">
+            <ellipse cx="180" cy="150" rx="170" ry="135" fill="#c0303b" opacity="0.85"/>
+            <ellipse cx="180" cy="150" rx="135" ry="105" fill="#f4a261" opacity="0.9"/>
+            <ellipse cx="180" cy="150" rx="100" ry="78"  fill="#2b6cb0" opacity="0.9"/>
+            <ellipse cx="180" cy="150" rx="65"  ry="50"  fill="#2dc653"/>
+            <ellipse cx="180" cy="150" rx="20"  ry="16"  fill="#25a844"/>
+            <text x="180" y="155" text-anchor="middle" fill="white" font-size="12" font-weight="bold">PITCH</text>
+            <text x="180" y="112" text-anchor="middle" fill="white" font-size="11" font-weight="bold">GENERAL</text>
+            <text x="180" y="78"  text-anchor="middle" fill="white" font-size="11" font-weight="bold">PREMIUM</text>
+            <text x="180" y="30"  text-anchor="middle" fill="white" font-size="11" font-weight="bold">VIP</text>
+            <text x="72"  y="155" text-anchor="middle" fill="white" font-size="11" font-weight="bold">GENERAL</text>
+            <text x="288" y="155" text-anchor="middle" fill="white" font-size="11" font-weight="bold">GENERAL</text>
+          </svg>
+          <div class="seat-legend">
+            <span><span class="ldot" style="background:#2b6cb0"></span>General – $25</span>
+            <span><span class="ldot" style="background:#f4a261"></span>Premium – $75</span>
+            <span><span class="ldot" style="background:#c0303b"></span>VIP – $150</span>
+          </div>
+        </div>
+        <!-- Section links -->
+        <div class="section-card">
+          <h3>Choose a Section</h3>
+          <a href="#checkout-india-aus-gen" class="section-opt">
+            <span class="s-name">⬤ General</span><span class="s-price">$25 / ticket</span>
+          </a>
+          <a href="#checkout-india-aus-pre" class="section-opt">
+            <span class="s-name">⬤ Premium</span><span class="s-price">$75 / ticket</span>
+          </a>
+          <a href="#checkout-india-aus-vip" class="section-opt">
+            <span class="s-name">⬤ VIP</span><span class="s-price">$150 / ticket</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Repeat ticket pages for other games (abbreviated — same layout, different prices) -->
+  <div id="tickets-eng-sa" class="page">
+    <section class="section">
+      <a href="#detail-eng-sa" class="back-link">← Back to Game Details</a>
+      <h2 class="select-heading">Select Tickets</h2>
+      <p class="select-sub">England vs South Africa – T20 World Cup</p>
+      <div class="ticket-select-layout">
+        <div class="stadium-wrap">
+          <svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" class="stadium-svg">
+            <ellipse cx="180" cy="150" rx="170" ry="135" fill="#c0303b" opacity="0.85"/>
+            <ellipse cx="180" cy="150" rx="135" ry="105" fill="#f4a261" opacity="0.9"/>
+            <ellipse cx="180" cy="150" rx="100" ry="78" fill="#2b6cb0" opacity="0.9"/>
+            <ellipse cx="180" cy="150" rx="65" ry="50" fill="#2dc653"/>
+            <ellipse cx="180" cy="150" rx="20" ry="16" fill="#25a844"/>
+            <text x="180" y="155" text-anchor="middle" fill="white" font-size="12" font-weight="bold">PITCH</text>
+          </svg>
+          <div class="seat-legend">
+            <span><span class="ldot" style="background:#2b6cb0"></span>General – $20</span>
+            <span><span class="ldot" style="background:#f4a261"></span>Premium – $60</span>
+            <span><span class="ldot" style="background:#c0303b"></span>VIP – $120</span>
+          </div>
+        </div>
+        <div class="section-card">
+          <h3>Choose a Section</h3>
+          <a href="#checkout-eng-sa-gen" class="section-opt"><span class="s-name">⬤ General</span><span class="s-price">$20 / ticket</span></a>
+          <a href="#checkout-eng-sa-pre" class="section-opt"><span class="s-name">⬤ Premium</span><span class="s-price">$60 / ticket</span></a>
+          <a href="#checkout-eng-sa-vip" class="section-opt"><span class="s-name">⬤ VIP</span><span class="s-price">$120 / ticket</span></a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Generic ticket pages for remaining games -->
+  <div id="tickets-pak-nz"   class="page"><section class="section"><a href="#detail-pak-nz"   class="back-link">← Back</a><h2 class="select-heading">Select Tickets</h2><p class="select-sub">Pakistan vs New Zealand</p><div class="ticket-select-layout"><div class="stadium-wrap"><svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" class="stadium-svg"><ellipse cx="180" cy="150" rx="170" ry="135" fill="#c0303b" opacity="0.85"/><ellipse cx="180" cy="150" rx="135" ry="105" fill="#f4a261" opacity="0.9"/><ellipse cx="180" cy="150" rx="100" ry="78" fill="#2b6cb0" opacity="0.9"/><ellipse cx="180" cy="150" rx="65" ry="50" fill="#2dc653"/><text x="180" y="155" text-anchor="middle" fill="white" font-size="12" font-weight="bold">PITCH</text></svg><div class="seat-legend"><span><span class="ldot" style="background:#2b6cb0"></span>General – $20</span><span><span class="ldot" style="background:#f4a261"></span>Premium – $55</span><span><span class="ldot" style="background:#c0303b"></span>VIP – $100</span></div></div><div class="section-card"><h3>Choose a Section</h3><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ General</span><span class="s-price">$20 / ticket</span></a><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ Premium</span><span class="s-price">$55 / ticket</span></a><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ VIP</span><span class="s-price">$100 / ticket</span></a></div></div></section></div>
+  <div id="tickets-ban-sl"   class="page"><section class="section"><a href="#detail-ban-sl"   class="back-link">← Back</a><h2 class="select-heading">Select Tickets</h2><p class="select-sub">Bangladesh vs Sri Lanka</p><div class="ticket-select-layout"><div class="stadium-wrap"><svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" class="stadium-svg"><ellipse cx="180" cy="150" rx="170" ry="135" fill="#c0303b" opacity="0.85"/><ellipse cx="180" cy="150" rx="135" ry="105" fill="#f4a261" opacity="0.9"/><ellipse cx="180" cy="150" rx="100" ry="78" fill="#2b6cb0" opacity="0.9"/><ellipse cx="180" cy="150" rx="65" ry="50" fill="#2dc653"/><text x="180" y="155" text-anchor="middle" fill="white" font-size="12" font-weight="bold">PITCH</text></svg></div><div class="section-card"><h3>Choose a Section</h3><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ General</span><span class="s-price">$15 / ticket</span></a><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ Premium</span><span class="s-price">$45 / ticket</span></a><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ VIP</span><span class="s-price">$90 / ticket</span></a></div></div></section></div>
+  <div id="tickets-lakers"   class="page"><section class="section"><a href="#detail-lakers"   class="back-link">← Back</a><h2 class="select-heading">Select Tickets</h2><p class="select-sub">Lakers vs Celtics – NBA</p><div class="ticket-select-layout"><div class="stadium-wrap"><svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" class="stadium-svg"><ellipse cx="180" cy="150" rx="170" ry="135" fill="#c0303b" opacity="0.85"/><ellipse cx="180" cy="150" rx="135" ry="105" fill="#f4a261" opacity="0.9"/><ellipse cx="180" cy="150" rx="100" ry="78" fill="#2b6cb0" opacity="0.9"/><ellipse cx="180" cy="150" rx="65" ry="50" fill="#2dc653"/><text x="180" y="155" text-anchor="middle" fill="white" font-size="12" font-weight="bold">COURT</text></svg></div><div class="section-card"><h3>Choose a Section</h3><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ General</span><span class="s-price">$50 / ticket</span></a><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ Premium</span><span class="s-price">$150 / ticket</span></a><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ VIP</span><span class="s-price">$350 / ticket</span></a></div></div></section></div>
+  <div id="tickets-warriors" class="page"><section class="section"><a href="#detail-warriors" class="back-link">← Back</a><h2 class="select-heading">Select Tickets</h2><p class="select-sub">Warriors vs Heat – NBA</p><div class="ticket-select-layout"><div class="stadium-wrap"><svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" class="stadium-svg"><ellipse cx="180" cy="150" rx="170" ry="135" fill="#c0303b" opacity="0.85"/><ellipse cx="180" cy="150" rx="135" ry="105" fill="#f4a261" opacity="0.9"/><ellipse cx="180" cy="150" rx="100" ry="78" fill="#2b6cb0" opacity="0.9"/><ellipse cx="180" cy="150" rx="65" ry="50" fill="#2dc653"/><text x="180" y="155" text-anchor="middle" fill="white" font-size="12" font-weight="bold">COURT</text></svg></div><div class="section-card"><h3>Choose a Section</h3><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ General</span><span class="s-price">$75 / ticket</span></a><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ Premium</span><span class="s-price">$200 / ticket</span></a><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ VIP</span><span class="s-price">$500 / ticket</span></a></div></div></section></div>
+  <div id="tickets-mancity"  class="page"><section class="section"><a href="#detail-mancity"  class="back-link">← Back</a><h2 class="select-heading">Select Tickets</h2><p class="select-sub">Man City vs Arsenal – Premier League</p><div class="ticket-select-layout"><div class="stadium-wrap"><svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" class="stadium-svg"><ellipse cx="180" cy="150" rx="170" ry="135" fill="#c0303b" opacity="0.85"/><ellipse cx="180" cy="150" rx="135" ry="105" fill="#f4a261" opacity="0.9"/><ellipse cx="180" cy="150" rx="100" ry="78" fill="#2b6cb0" opacity="0.9"/><rect x="130" y="120" width="100" height="60" fill="#2dc653" rx="4"/><text x="180" y="155" text-anchor="middle" fill="white" font-size="12" font-weight="bold">PITCH</text></svg></div><div class="section-card"><h3>Choose a Section</h3><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ General</span><span class="s-price">$30 / ticket</span></a><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ Premium</span><span class="s-price">$85 / ticket</span></a><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ VIP</span><span class="s-price">$200 / ticket</span></a></div></div></section></div>
+  <div id="tickets-liverpool" class="page"><section class="section"><a href="#detail-liverpool" class="back-link">← Back</a><h2 class="select-heading">Select Tickets</h2><p class="select-sub">Liverpool vs Chelsea – Premier League</p><div class="ticket-select-layout"><div class="stadium-wrap"><svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" class="stadium-svg"><ellipse cx="180" cy="150" rx="170" ry="135" fill="#c0303b" opacity="0.85"/><ellipse cx="180" cy="150" rx="135" ry="105" fill="#f4a261" opacity="0.9"/><ellipse cx="180" cy="150" rx="100" ry="78" fill="#2b6cb0" opacity="0.9"/><rect x="130" y="120" width="100" height="60" fill="#2dc653" rx="4"/><text x="180" y="155" text-anchor="middle" fill="white" font-size="12" font-weight="bold">PITCH</text></svg></div><div class="section-card"><h3>Choose a Section</h3><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ General</span><span class="s-price">$40 / ticket</span></a><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ Premium</span><span class="s-price">$100 / ticket</span></a><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ VIP</span><span class="s-price">$220 / ticket</span></a></div></div></section></div>
+  <div id="tickets-chiefs"   class="page"><section class="section"><a href="#detail-chiefs"   class="back-link">← Back</a><h2 class="select-heading">Select Tickets</h2><p class="select-sub">Chiefs vs Bills – NFL</p><div class="ticket-select-layout"><div class="stadium-wrap"><svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" class="stadium-svg"><ellipse cx="180" cy="150" rx="170" ry="135" fill="#c0303b" opacity="0.85"/><ellipse cx="180" cy="150" rx="135" ry="105" fill="#f4a261" opacity="0.9"/><ellipse cx="180" cy="150" rx="100" ry="78" fill="#2b6cb0" opacity="0.9"/><rect x="110" y="125" width="140" height="50" fill="#2dc653" rx="4"/><text x="180" y="155" text-anchor="middle" fill="white" font-size="12" font-weight="bold">FIELD</text></svg></div><div class="section-card"><h3>Choose a Section</h3><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ General</span><span class="s-price">$80 / ticket</span></a><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ Premium</span><span class="s-price">$220 / ticket</span></a><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ VIP</span><span class="s-price">$500 / ticket</span></a></div></div></section></div>
+  <div id="tickets-yankees"  class="page"><section class="section"><a href="#detail-yankees"  class="back-link">← Back</a><h2 class="select-heading">Select Tickets</h2><p class="select-sub">Yankees vs Red Sox – MLB</p><div class="ticket-select-layout"><div class="stadium-wrap"><svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" class="stadium-svg"><ellipse cx="180" cy="150" rx="170" ry="135" fill="#c0303b" opacity="0.85"/><ellipse cx="180" cy="150" rx="135" ry="105" fill="#f4a261" opacity="0.9"/><ellipse cx="180" cy="150" rx="100" ry="78" fill="#2b6cb0" opacity="0.9"/><ellipse cx="180" cy="150" rx="65" ry="50" fill="#2dc653"/><text x="180" y="155" text-anchor="middle" fill="white" font-size="12" font-weight="bold">DIAMOND</text></svg></div><div class="section-card"><h3>Choose a Section</h3><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ General</span><span class="s-price">$35 / ticket</span></a><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ Premium</span><span class="s-price">$90 / ticket</span></a><a href="#checkout-confirm" class="section-opt"><span class="s-name">⬤ VIP</span><span class="s-price">$180 / ticket</span></a></div></div></section></div>
+
+
+  <!-- ========== CHECKOUT PAGES (India vs Aus only — full form, others go to confirm) ========== -->
+  <!-- General -->
+  <div id="checkout-india-aus-gen" class="page">
+    <section class="section">
+      <a href="#tickets-india-aus" class="back-link">← Back to Select Tickets</a>
+      <h2 class="checkout-title">Checkout</h2>
+      <p class="checkout-match">India vs Australia – T20 World Cup &nbsp;·&nbsp; <strong>General Section — $25/ticket</strong></p>
+      <div class="checkout-layout">
+        <div>
+          <div class="form-card">
+            <h3>Contact Information</h3>
+            <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your full name"/></div>
+            <div class="form-group"><label>Email</label><input type="email" placeholder="you@email.com"/></div>
+            <div class="form-group"><label>Phone</label><input type="tel" placeholder="+1 (555) 000-0000"/></div>
+          </div>
+          <div class="form-card">
+            <h3>Payment Information</h3>
+            <div class="form-group"><label>Card Number</label><input type="text" placeholder="1234 5678 9012 3456"/></div>
+            <div class="form-row">
+              <div class="form-group"><label>Expiry</label><input type="text" placeholder="MM / YY"/></div>
+              <div class="form-group"><label>CVV</label><input type="text" placeholder="123"/></div>
+            </div>
+            <div class="form-group"><label>Cardholder Name</label><input type="text" placeholder="Name on card"/></div>
+          </div>
+        </div>
+        <div class="order-card">
+          <h3>Order Summary</h3>
+          <div class="order-row"><span class="o-k">Match</span><span class="o-v">India vs Australia</span></div>
+          <div class="order-row"><span class="o-k">Venue</span><span class="o-v">Kensington Oval, Barbados</span></div>
+          <div class="order-row"><span class="o-k">Section</span><span class="o-v">General</span></div>
+          <div class="order-row"><span class="o-k">Quantity</span><span class="o-v">2 Tickets</span></div>
+          <div class="order-row"><span class="o-k">Price/ticket</span><span class="o-v">$25</span></div>
+          <hr class="o-divider"/>
+          <div class="order-row"><span class="o-k">Subtotal</span><span class="o-v">$50</span></div>
+          <div class="order-row"><span class="o-k">Service Fee</span><span class="o-v">$10</span></div>
+          <div class="order-total"><span>Total</span><span class="t-price">$60</span></div>
+          <br/>
+          <a href="#checkout-confirm" class="btn-primary" style="display:block;text-align:center;padding:14px;">Pay Now</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Premium -->
+  <div id="checkout-india-aus-pre" class="page">
+    <section class="section">
+      <a href="#tickets-india-aus" class="back-link">← Back to Select Tickets</a>
+      <h2 class="checkout-title">Checkout</h2>
+      <p class="checkout-match">India vs Australia – T20 World Cup &nbsp;·&nbsp; <strong>Premium Section — $75/ticket</strong></p>
+      <div class="checkout-layout">
+        <div>
+          <div class="form-card">
+            <h3>Contact Information</h3>
+            <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your full name"/></div>
+            <div class="form-group"><label>Email</label><input type="email" placeholder="you@email.com"/></div>
+            <div class="form-group"><label>Phone</label><input type="tel" placeholder="+1 (555) 000-0000"/></div>
+          </div>
+          <div class="form-card">
+            <h3>Payment Information</h3>
+            <div class="form-group"><label>Card Number</label><input type="text" placeholder="1234 5678 9012 3456"/></div>
+            <div class="form-row">
+              <div class="form-group"><label>Expiry</label><input type="text" placeholder="MM / YY"/></div>
+              <div class="form-group"><label>CVV</label><input type="text" placeholder="123"/></div>
+            </div>
+            <div class="form-group"><label>Cardholder Name</label><input type="text" placeholder="Name on card"/></div>
+          </div>
+        </div>
+        <div class="order-card">
+          <h3>Order Summary</h3>
+          <div class="order-row"><span class="o-k">Match</span><span class="o-v">India vs Australia</span></div>
+          <div class="order-row"><span class="o-k">Section</span><span class="o-v">Premium</span></div>
+          <div class="order-row"><span class="o-k">Quantity</span><span class="o-v">2 Tickets</span></div>
+          <div class="order-row"><span class="o-k">Price/ticket</span><span class="o-v">$75</span></div>
+          <hr class="o-divider"/>
+          <div class="order-row"><span class="o-k">Subtotal</span><span class="o-v">$150</span></div>
+          <div class="order-row"><span class="o-k">Service Fee</span><span class="o-v">$10</span></div>
+          <div class="order-total"><span>Total</span><span class="t-price">$160</span></div>
+          <br/>
+          <a href="#checkout-confirm" class="btn-primary" style="display:block;text-align:center;padding:14px;">Pay Now</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- VIP -->
+  <div id="checkout-india-aus-vip" class="page">
+    <section class="section">
+      <a href="#tickets-india-aus" class="back-link">← Back to Select Tickets</a>
+      <h2 class="checkout-title">Checkout</h2>
+      <p class="checkout-match">India vs Australia – T20 World Cup &nbsp;·&nbsp; <strong>VIP Section — $150/ticket</strong></p>
+      <div class="checkout-layout">
+        <div>
+          <div class="form-card">
+            <h3>Contact Information</h3>
+            <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your full name"/></div>
+            <div class="form-group"><label>Email</label><input type="email" placeholder="you@email.com"/></div>
+            <div class="form-group"><label>Phone</label><input type="tel" placeholder="+1 (555) 000-0000"/></div>
+          </div>
+          <div class="form-card">
+            <h3>Payment Information</h3>
+            <div class="form-group"><label>Card Number</label><input type="text" placeholder="1234 5678 9012 3456"/></div>
+            <div class="form-row">
+              <div class="form-group"><label>Expiry</label><input type="text" placeholder="MM / YY"/></div>
+              <div class="form-group"><label>CVV</label><input type="text" placeholder="123"/></div>
+            </div>
+            <div class="form-group"><label>Cardholder Name</label><input type="text" placeholder="Name on card"/></div>
+          </div>
+        </div>
+        <div class="order-card">
+          <h3>Order Summary</h3>
+          <div class="order-row"><span class="o-k">Match</span><span class="o-v">India vs Australia</span></div>
+          <div class="order-row"><span class="o-k">Section</span><span class="o-v">VIP</span></div>
+          <div class="order-row"><span class="o-k">Quantity</span><span class="o-v">2 Tickets</span></div>
+          <div class="order-row"><span class="o-k">Price/ticket</span><span class="o-v">$150</span></div>
+          <hr class="o-divider"/>
+          <div class="order-row"><span class="o-k">Subtotal</span><span class="o-v">$300</span></div>
+          <div class="order-row"><span class="o-k">Service Fee</span><span class="o-v">$10</span></div>
+          <div class="order-total"><span>Total</span><span class="t-price">$310</span></div>
+          <br/>
+          <a href="#checkout-confirm" class="btn-primary" style="display:block;text-align:center;padding:14px;">Pay Now</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Eng vs SA checkout pages -->
+  <div id="checkout-eng-sa-gen" class="page"><section class="section"><a href="#tickets-eng-sa" class="back-link">← Back</a><h2 class="checkout-title">Checkout</h2><p class="checkout-match">England vs South Africa · <strong>General — $20/ticket</strong></p><div class="checkout-layout"><div><div class="form-card"><h3>Contact Information</h3><div class="form-group"><label>Full Name</label><input type="text" placeholder="Your full name"/></div><div class="form-group"><label>Email</label><input type="email" placeholder="you@email.com"/></div></div><div class="form-card"><h3>Payment Information</h3><div class="form-group"><label>Card Number</label><input type="text" placeholder="1234 5678 9012 3456"/></div><div class="form-row"><div class="form-group"><label>Expiry</label><input type="text" placeholder="MM/YY"/></div><div class="form-group"><label>CVV</label><input type="text" placeholder="123"/></div></div></div></div><div class="order-card"><h3>Order Summary</h3><div class="order-row"><span class="o-k">Section</span><span class="o-v">General</span></div><div class="order-row"><span class="o-k">Qty</span><span class="o-v">2 Tickets</span></div><hr class="o-divider"/><div class="order-row"><span class="o-k">Subtotal</span><span class="o-v">$40</span></div><div class="order-row"><span class="o-k">Fee</span><span class="o-v">$10</span></div><div class="order-total"><span>Total</span><span class="t-price">$50</span></div><br/><a href="#checkout-confirm" class="btn-primary" style="display:block;text-align:center;padding:14px;">Pay Now</a></div></div></section></div>
+  <div id="checkout-eng-sa-pre" class="page"><section class="section"><a href="#tickets-eng-sa" class="back-link">← Back</a><h2 class="checkout-title">Checkout</h2><p class="checkout-match">England vs South Africa · <strong>Premium — $60/ticket</strong></p><div class="checkout-layout"><div><div class="form-card"><h3>Contact</h3><div class="form-group"><label>Full Name</label><input type="text" placeholder="Your full name"/></div><div class="form-group"><label>Email</label><input type="email" placeholder="you@email.com"/></div></div><div class="form-card"><h3>Payment</h3><div class="form-group"><label>Card Number</label><input type="text" placeholder="1234 5678 9012 3456"/></div></div></div><div class="order-card"><h3>Order Summary</h3><div class="order-row"><span class="o-k">Section</span><span class="o-v">Premium</span></div><div class="order-row"><span class="o-k">Qty</span><span class="o-v">2 Tickets</span></div><hr class="o-divider"/><div class="order-total"><span>Total</span><span class="t-price">$130</span></div><br/><a href="#checkout-confirm" class="btn-primary" style="display:block;text-align:center;padding:14px;">Pay Now</a></div></div></section></div>
+  <div id="checkout-eng-sa-vip" class="page"><section class="section"><a href="#tickets-eng-sa" class="back-link">← Back</a><h2 class="checkout-title">Checkout</h2><p class="checkout-match">England vs South Africa · <strong>VIP — $120/ticket</strong></p><div class="checkout-layout"><div><div class="form-card"><h3>Contact</h3><div class="form-group"><label>Full Name</label><input type="text" placeholder="Your full name"/></div><div class="form-group"><label>Email</label><input type="email" placeholder="you@email.com"/></div></div><div class="form-card"><h3>Payment</h3><div class="form-group"><label>Card Number</label><input type="text" placeholder="1234 5678 9012 3456"/></div></div></div><div class="order-card"><h3>Order Summary</h3><div class="order-row"><span class="o-k">Section</span><span class="o-v">VIP</span></div><div class="order-row"><span class="o-k">Qty</span><span class="o-v">2 Tickets</span></div><hr class="o-divider"/><div class="order-total"><span>Total</span><span class="t-price">$250</span></div><br/><a href="#checkout-confirm" class="btn-primary" style="display:block;text-align:center;padding:14px;">Pay Now</a></div></div></section></div>
+
+
+  <!-- ========== CONFIRMATION PAGE ========== -->
+  <div id="checkout-confirm" class="page">
+    <section class="section confirm-section">
+      <div class="confirm-icon">✓</div>
+      <h1 class="confirm-title">Booking Confirmed!</h1>
+      <p class="confirm-sub">Your tickets have been booked successfully.</p>
+      <p class="confirm-id">Booking ID: SL2024150061234</p>
+
+      <div class="confirm-card">
+        <div class="confirm-match-row">
+          <div class="c-team">
+            <div class="c-flag">🇮🇳</div>
+            <div class="c-name">India</div>
+            <div class="c-label">T20 World Cup</div>
+          </div>
+          <div class="c-vs">VS</div>
+          <div class="c-team">
+            <div class="c-flag">🇦🇺</div>
+            <div class="c-name">Australia</div>
+            <div class="c-label">Today, 7:30 PM</div>
+          </div>
+        </div>
+        <div class="confirm-details">
+          <div class="c-item"><div class="ci-k">Section</div><div class="ci-v">Premium</div></div>
+          <div class="c-item"><div class="ci-k">Quantity</div><div class="ci-v">2 Tickets</div></div>
+          <div class="c-item"><div class="ci-k">Venue</div><div class="ci-v">Kensington Oval</div></div>
+          <div class="c-item"><div class="ci-k">Total Paid</div><div class="ci-v" style="color:var(--accent-grn)">$160</div></div>
+        </div>
+      </div>
+
+      <p class="confirm-email">E-Tickets sent to <strong>your@email.com</strong></p>
+
+      <div class="confirm-actions">
+        <a href="#home" class="btn-primary">Back to Home</a>
+        <a href="#live" class="btn-outline">View More Games</a>
+      </div>
+    </section>
+  </div>
+
 </body>
 </html>
